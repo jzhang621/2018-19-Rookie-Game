@@ -108,7 +108,7 @@ $( document ).ready(function() {
 						jcell.style.backgroundColor = 'yellow'
 						jimmy_score[0] += 1;
 					} 
-					else if(jimmy_total[i] < rodger_total[i]) {
+					else if(jimmy_total[i] > rodger_total[i]) {
 						rcell.style.backgroundColor = 'yellow'
 						jimmy_score[1] += 1;
 					}
