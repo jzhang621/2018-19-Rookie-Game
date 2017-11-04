@@ -7,74 +7,78 @@ $( document ).ready(function() {
 	$.getJSON(url,  // url
 	    function (data) {  // success callback
 	        rowSet = data.resultSets[0].rowSet;
-	        rodger_total = new Array(14).fill(0);
+	        console.log(data.resultSets[0]);
+	        rodger_total = new Array(15).fill(0);
 	        rodger_total[0] = "Rodger Totals"
-	        jimmy_total = new Array(14).fill(0);
+	        jimmy_total = new Array(15).fill(0);
 	        jimmy_total[0] = "Jimmy Totals"
 	        jimmy_score = new Array(3).fill(0);
 			for (var i = 0; i < rowSet.length; i++) {
 				if (rodger_players.indexOf(rowSet[i][1]) > -1) {
 					row = document.getElementById(rowSet[i][1]); 
 					row.insertCell(0).innerHTML = rowSet[i][1]; //name
-					row.insertCell(1).innerHTML = rowSet[i][10]; //FG
-					row.insertCell(2).innerHTML = rowSet[i][11]; //FGA
-					row.insertCell(3).innerHTML = Number(rowSet[i][10]*1.0/rowSet[i][11]).toFixed(3); //FG%
-					row.insertCell(4).innerHTML = rowSet[i][16]; //FT
-					row.insertCell(5).innerHTML = rowSet[i][17]; //FTA
-					row.insertCell(6).innerHTML = Number(rowSet[i][16]*1.0/rowSet[i][17]).toFixed(3); //FT%
-					row.insertCell(7).innerHTML = rowSet[i][29]; //PTS
-					row.insertCell(8).innerHTML = rowSet[i][21]; //REB
-					row.insertCell(9).innerHTML = rowSet[i][22]; //AST
-					row.insertCell(10).innerHTML = rowSet[i][13]; //3p
-					row.insertCell(11).innerHTML = rowSet[i][24]; //STL
-					row.insertCell(12).innerHTML = rowSet[i][25]; //BLK
-					row.insertCell(13).innerHTML = rowSet[i][23]; //TO
-					rodger_total[1] += rowSet[i][10]; //FG
-					rodger_total[2] += rowSet[i][11];
-					rodger_total[4] += rowSet[i][16];
-					rodger_total[5] += rowSet[i][17];
-					rodger_total[7] += rowSet[i][29];
-					rodger_total[8] += rowSet[i][21];
-					rodger_total[9] += rowSet[i][22];
-					rodger_total[10] += rowSet[i][13];
-					rodger_total[11] += rowSet[i][24];
-					rodger_total[12] += rowSet[i][25];
-					rodger_total[13] += rowSet[i][23];
+					row.insertCell(1).innerHTML = rowSet[i][5]; //GP
+					row.insertCell(2).innerHTML = rowSet[i][10]; //FG
+					row.insertCell(3).innerHTML = rowSet[i][11]; //FGA
+					row.insertCell(4).innerHTML = Number(rowSet[i][10]*1.0/rowSet[i][11]).toFixed(3); //FG%
+					row.insertCell(5).innerHTML = rowSet[i][16]; //FT
+					row.insertCell(6).innerHTML = rowSet[i][17]; //FTA
+					row.insertCell(7).innerHTML = Number(rowSet[i][16]*1.0/rowSet[i][17]).toFixed(3); //FT%
+					row.insertCell(8).innerHTML = rowSet[i][29]; //PTS
+					row.insertCell(9).innerHTML = rowSet[i][21]; //REB
+					row.insertCell(10).innerHTML = rowSet[i][22]; //AST
+					row.insertCell(11).innerHTML = rowSet[i][13]; //3p
+					row.insertCell(12).innerHTML = rowSet[i][24]; //STL
+					row.insertCell(13).innerHTML = rowSet[i][25]; //BLK
+					row.insertCell(14).innerHTML = rowSet[i][23]; //TO
+					rodger_total[1] += rowSet[i][5]; //GP
+					rodger_total[2] += rowSet[i][10]; //FG
+					rodger_total[3] += rowSet[i][11];
+					rodger_total[5] += rowSet[i][16];
+					rodger_total[6] += rowSet[i][17];
+					rodger_total[8] += rowSet[i][29];
+					rodger_total[9] += rowSet[i][21];
+					rodger_total[10] += rowSet[i][22];
+					rodger_total[11] += rowSet[i][13];
+					rodger_total[12] += rowSet[i][24];
+					rodger_total[13] += rowSet[i][25];
+					rodger_total[14] += rowSet[i][23];
 				}
 				if (jimmy_players.indexOf(rowSet[i][1]) > -1) {
 					row = document.getElementById(rowSet[i][1]); 
 					row.insertCell(0).innerHTML = rowSet[i][1]; //name
-					row.insertCell(1).innerHTML = rowSet[i][10]; //FG
-					row.insertCell(2).innerHTML = rowSet[i][11]; //FGA
-					row.insertCell(3).innerHTML = Number(rowSet[i][10]*1.0/rowSet[i][11]).toFixed(3); //FG%
-					row.insertCell(4).innerHTML = rowSet[i][16]; //FT
-					row.insertCell(5).innerHTML = rowSet[i][17]; //FTA
-					row.insertCell(6).innerHTML = Number(rowSet[i][16]*1.0/rowSet[i][17]).toFixed(3); //FT%
-					row.insertCell(7).innerHTML = rowSet[i][29]; //PTS
-					row.insertCell(8).innerHTML = rowSet[i][21]; //REB
-					row.insertCell(9).innerHTML = rowSet[i][22]; //AST
-					row.insertCell(10).innerHTML = rowSet[i][13]; //3p
-					row.insertCell(11).innerHTML = rowSet[i][24]; //STL
-					row.insertCell(12).innerHTML = rowSet[i][25]; //BLK
-					row.insertCell(13).innerHTML = rowSet[i][23]; //TO
-					jimmy_total[1] += rowSet[i][10]; //FG
-					jimmy_total[2] += rowSet[i][11];
-					jimmy_total[4] += rowSet[i][16];
-					jimmy_total[5] += rowSet[i][17];
-					jimmy_total[7] += rowSet[i][29];
-					jimmy_total[8] += rowSet[i][21];
-					jimmy_total[9] += rowSet[i][22];
-					jimmy_total[10] += rowSet[i][13];
-					jimmy_total[11] += rowSet[i][24];
-					jimmy_total[12] += rowSet[i][25];
-					jimmy_total[13] += rowSet[i][23];
-
+					row.insertCell(1).innerHTML = rowSet[i][5]; //GP
+					row.insertCell(2).innerHTML = rowSet[i][10]; //FG
+					row.insertCell(3).innerHTML = rowSet[i][11]; //FGA
+					row.insertCell(4).innerHTML = Number(rowSet[i][10]*1.0/rowSet[i][11]).toFixed(3); //FG%
+					row.insertCell(5).innerHTML = rowSet[i][16]; //FT
+					row.insertCell(6).innerHTML = rowSet[i][17]; //FTA
+					row.insertCell(7).innerHTML = Number(rowSet[i][16]*1.0/rowSet[i][17]).toFixed(3); //FT%
+					row.insertCell(8).innerHTML = rowSet[i][29]; //PTS
+					row.insertCell(9).innerHTML = rowSet[i][21]; //REB
+					row.insertCell(10).innerHTML = rowSet[i][22]; //AST
+					row.insertCell(11).innerHTML = rowSet[i][13]; //3p
+					row.insertCell(12).innerHTML = rowSet[i][24]; //STL
+					row.insertCell(13).innerHTML = rowSet[i][25]; //BLK
+					row.insertCell(14).innerHTML = rowSet[i][23]; //TO
+					jimmy_total[1] += rowSet[i][5]; //GP
+					jimmy_total[2] += rowSet[i][10]; //FG
+					jimmy_total[3] += rowSet[i][11];
+					jimmy_total[5] += rowSet[i][16];
+					jimmy_total[6] += rowSet[i][17];
+					jimmy_total[8] += rowSet[i][29];
+					jimmy_total[9] += rowSet[i][21];
+					jimmy_total[10] += rowSet[i][22];
+					jimmy_total[11] += rowSet[i][13];
+					jimmy_total[12] += rowSet[i][24];
+					jimmy_total[13] += rowSet[i][25];
+					jimmy_total[14] += rowSet[i][23];
 				}
 			}
-			rodger_total[3] = Number(rodger_total[1]*1.0/rodger_total[2]).toFixed(3);
-			rodger_total[6] = Number(rodger_total[4]*1.0/rodger_total[5]).toFixed(3);
-			jimmy_total[3] = Number(jimmy_total[1]*1.0/jimmy_total[2]).toFixed(3);
-			jimmy_total[6] = Number(jimmy_total[4]*1.0/jimmy_total[5]).toFixed(3);
+			rodger_total[4] = Number(rodger_total[2]*1.0/rodger_total[3]).toFixed(3);
+			rodger_total[7] = Number(rodger_total[5]*1.0/rodger_total[6]).toFixed(3);
+			jimmy_total[4] = Number(jimmy_total[2]*1.0/jimmy_total[3]).toFixed(3);
+			jimmy_total[7] = Number(jimmy_total[5]*1.0/jimmy_total[6]).toFixed(3);
 			for (var i = 0; i < rodger_total.length; i++) {
 				jrow = document.getElementById("jt");
 				rrow = document.getElementById("rt");
@@ -84,7 +88,7 @@ $( document ).ready(function() {
 				rcell = document.getElementById("rtt").insertCell(i);
 				jcell.innerHTML = jimmy_total[i];
 				rcell.innerHTML = rodger_total[i];
-				if (i > 6 && i != 13) {
+				if (i > 7 && i != 14) {
 					if (jimmy_total[i] > rodger_total[i]) {
 						jcell.style.backgroundColor = 'yellow'
 						jimmy_score[0] += 1;
@@ -99,7 +103,7 @@ $( document ).ready(function() {
 						jimmy_score[2] += 1;
 					}
 				}
-				if (i == 13) {
+				if (i == 14) {
 					if (jimmy_total[i] < rodger_total[i]) {
 						jcell.style.backgroundColor = 'yellow'
 						jimmy_score[0] += 1;
